@@ -1,5 +1,24 @@
 import pandas as pd
-import matplotlib as mt
-arxiu = pd.read_csv("Martín Sebastia Casco Merino - Llistat.csv")
+import matplotlib.pyplot as plt
+arxiu = pd.read_csv("Martín Sebastia Casco Merino - Llistat.csv", usecols=['NOTES'])
+nombres = pd.read_csv("Martín Sebastia Casco Merino - Llistat.csv", usecols=['NAME'])
+names = nombres.groupby(by='NAME').mean()
+notes = arxiu.groupby(by='NOTES').mean()
+print(names)
+print(notes)
+
+#media
+notas = pd.read_csv("Martín Sebastia Casco Merino - Llistat.csv", usecols=['NAME', 'NOTES'])
+
+#def exer1():
 #exercici 1
-print(arxiu)
+#print(notas)
+#print(arxiu['NAMES'])
+#media de las notas
+
+#print(arxiu.loc[['NAME'],['NOTES'].mean()])
+notas.groupby(by="NAME").mean()
+plt.plot(notas)
+#plt.xlabel('names')
+#plt.ylabel('notes')
+plt.show()
