@@ -17,8 +17,8 @@ notas = pd.read_csv("Martín Sebastia Casco Merino - Llistat.csv", usecols=['NAM
 #media de las notas
 
 #print(arxiu.loc[['NAME'],['NOTES'].mean()])
-notas.groupby(by="NAME").mean()
-plt.plot(notas)
+notatas = notas.groupby(by="NAME").mean()
+plt.plot(notatas)
 #plt.xlabel('names')
 #plt.ylabel('notes')
 plt.show()
